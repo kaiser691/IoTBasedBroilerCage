@@ -404,7 +404,7 @@ h1{
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
     #outer-container{
         width: 100%;
         padding: 0.5rem;
@@ -443,5 +443,13 @@ h1{
     }
     .temperature .label, .humidity .label{
       font-size: 0.5rem;
+    }
+}
+@media (max-width: 325px) {
+   .gauge-container {
+        gap: 10px;
+    }
+    :root{
+      --gauge-size: 90px;
     }
 }
