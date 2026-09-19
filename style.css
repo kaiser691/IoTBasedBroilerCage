@@ -15,6 +15,11 @@
     --humidity: 200deg; /*100 - 270 deg*/
     --humidity-needle-rotation: calc(var(--humidity) - 135deg); /* Adjust this value based on your data */
 
+    --feeder-warning-icon-1: 1;
+    --feeder-warning-icon-2: 1;
+    --water-warning-icon: 1;
+    --waste-warning-icon: 1; 
+
     --feeder-bar-percentage-1: 90%;
     --feeder-bar-percentage-2: 10%;
     --water-bar-percentage: 50%;
@@ -303,7 +308,18 @@ h1{
 
 .warning-icon {
   font-size: 0.9rem;
-  filter: grayscale(1) opacity(1); /* Makes it look like the UI image */
+}
+#feeder-1-warning {
+  filter: grayscale(var(--feeder-warning-icon-1)) opacity(1);
+}
+#feeder-2-warning {
+  filter: grayscale(var(--feeder-warning-icon-2)) opacity(1);
+}
+#water-warning {
+  filter: grayscale(var(--water-warning-icon)) opacity(1);
+}
+#waste-warning {
+  filter: grayscale(var(--waste-warning-icon)) opacity(1);
 }
 
 

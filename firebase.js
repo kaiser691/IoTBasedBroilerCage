@@ -26,6 +26,7 @@ const dashboardUpdates = () =>{
   toggleWaterContainer();
   toggleFeederContainer1();
   toggleFeederContainer2();
+  toggleWasteContainer();
 };
 
 // 2. Initialize Firebase
@@ -45,6 +46,7 @@ onValue(rtdbRef, (snapshot) => {
     window.feederContainer1 = data.Feeds.container1; 
     window.feederContainer2 = data.Feeds.container2;
     window.waterContainer = data.Feeds.water;
+    window.wasteContainer = data.Feeds.waste;
     dashboardUpdates(); // Call the function to update the dashboard with new data
   }else{
     console.log("No data available at this path");

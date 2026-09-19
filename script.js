@@ -7,6 +7,7 @@ window.humidity = 0; //in percentage
 window.feederContainer1 = 0; //in percentage
 window.feederContainer2 = 0; //in percentage
 window.waterContainer = 0; //in percentage
+window.wasteContainer = 0; //in percentage
 
 let statusText = document.getElementById("status");
 let outerContainer = document.getElementById("outer-container");
@@ -23,16 +24,41 @@ const feederContainer2Value = container.querySelector('.bar-container.feeder-con
 function toggleWaterContainer() {
    root.style.setProperty('--water-bar-percentage', `${waterContainer}%`);
    container.querySelector('#water-percentage').textContent = `${waterContainer}%`;
+   if(waterContainer <= 20){
+      root.style.setProperty('--water-warning-icon', "0");
+   }else{
+      root.style.setProperty('--water-warning-icon', "1");
+   }
+}
+
+function toggleWasteContainer() {
+   root.style.setProperty('--waste-bar-percentage', `${wasteContainer}%`);
+   container.querySelector('#waste-percentage').textContent = `${wasteContainer}%`;
+   if(wasteContainer >= 70){
+      root.style.setProperty('--waste-warning-icon', "0");
+   }else{
+      root.style.setProperty('--waste-warning-icon', "1");
+   }
 }
 
 function toggleFeederContainer1() {
    root.style.setProperty('--feeder-bar-percentage-1', `${feederContainer1}%`);
    container.querySelector('#feeder-1-percentage').textContent = `${feederContainer1}%`;
+   if(feederContainer1 <= 20){
+      root.style.setProperty('--feeder-warning-icon-1', "0");
+   }else{
+      root.style.setProperty('--feeder-warning-icon-1', "1");
+   }
 }
 
 function toggleFeederContainer2() {
    root.style.setProperty('--feeder-bar-percentage-2', `${feederContainer2}%`);
    container.querySelector('#feeder-2-percentage').textContent = `${feederContainer2}%`;
+   if(feederContainer2 <= 20){
+      root.style.setProperty('--feeder-warning-icon-2', "0");
+   }else{
+      root.style.setProperty('--feeder-warning-icon-2', "1");
+   }
 }
 
 function mapRange(value, inMin, inMax, outMin, outMax) {
@@ -83,3 +109,4 @@ updateTempHumidity();
 toggleFeederContainer1();
 toggleFeederContainer2();
 toggleWaterContainer();
+toggleWasteContainer();
