@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>          
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IoT Based Broiler Cage Monitoring System</title>
+        <link rel="shortcut icon" href="images\AB.png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div id="outer-container">
+            <span class="title-container">
+                <h1 id="title">IoT Based Broiler Cage Monitoring System</h1>
+            </span>
+            <div id="data-container">
+                <div class="gauge-container">
+                    <p>Environmental Gauges</p>
+                    <div class="environmental-box-container">
+                        <div class="gauge temperature">
+                            <div class="gauge-arc temperature-arc"></div>
+                            <div class="needle temperature-needle"></div>
+                            <div class="gauge-info">
+                            <span class="value">30</span>
+                            <span class="label">TEMPERATURE</span>
+                            </div>
+                        </div>
+                        <div class="gauge humidity">
+                            <div class="gauge-arc humidity-arc"></div>
+                            <div class="needle humidity-needle"></div>
+                            <div class="gauge-info">
+                            <span class="value">30</span>
+                            <span class="label">HUMIDITY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="resource-waste-gauges" class="gauge-container">
+                    <p>Resource/Waste Gauges</p>
+                    <div class="bars-container">
+                        <div class="bar-wrapper feeder">
+                            <div class="percentage-row">
+                                <span class="percentage" id="feeder-1-percentage">7%</span>
+                                <span class="warning-icon">⚠️</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill feeder-bar-fill-1"></div>
+                            </div>
+                            <span class="label">FEEDER<br>CONTAINER 1</span>
+                        </div>
+
+                        <div class="bar-wrapper feeder">
+                            <div class="percentage-row">
+                                <span class="percentage" id="feeder-2-percentage">7%</span>
+                                <span class="warning-icon">⚠️</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill feeder-bar-fill-2"></div>
+                            </div>
+                            <span class="label">FEEDER<br>CONTAINER 2</span>
+                        </div>
+
+                        <div class="bar-wrapper water">
+                            <div class="percentage-row">
+                                <span class="percentage" id="water-percentage">90%</span>
+                                <span class="warning-icon">⚠️</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill water-bar-fill"></div>
+                            </div>
+                            <span class="label">WATER<br>CONTAINER</span>
+                        </div>
+
+                        <div class="bar-wrapper waste">
+                            <div class="percentage-row">
+                                <span class="percentage">45%</span>
+                                <span class="warning-icon">⚠️</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill waste-bar-fill"></div>
+                            </div>
+                            <span class="label">WASTE<br>ACCUMLATION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="firebase.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>       
