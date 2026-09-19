@@ -26,6 +26,10 @@
     --waste-bar-percentage: 45%;
 }
 
+html{
+  background-color: #000000;
+}
+
 *{
     margin: 0;
     padding: 0;
