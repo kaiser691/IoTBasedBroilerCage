@@ -45,7 +45,7 @@ onValue(rtdbRef, (snapshot) => {
     window.humidity = data.Environment.humidity;  
     window.feederContainer1 = data.Feeds.container1; 
     window.feederContainer2 = data.Feeds.container2;
-    window.waterContainer = data.Feeds.water;
+    window.waterContainer = data.Feeds.waterContainer;
     window.wasteContainer = data.Feeds.waste;
     dashboardUpdates(); // Call the function to update the dashboard with new data
   }else{
