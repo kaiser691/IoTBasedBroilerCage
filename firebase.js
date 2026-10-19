@@ -43,10 +43,36 @@ onValue(rtdbRef, (snapshot) => {
     console.log("Data from Firebase:", data);
     window.temperature = data.Environment.temperature;
     window.humidity = data.Environment.humidity;  
-    window.feederContainer1 = data.Feeds.container1; 
-    window.feederContainer2 = data.Feeds.container2;
-    window.waterContainer = data.Feeds.waterContainer;
-    window.wasteContainer = data.Feeds.waste;
+    window.feederContainer1 = Math.round(data.Feeds.container1/7000*100); 
+    window.feederContainer2 = Math.round(data.Feeds.container2/7000*100);
+    window.waterContainer = Math.round(data.Feeds.waterContainer/15000*100);
+    window.wasteContainer = Math.round(data.Feeds.waste);
+
+    if(window.feederContainer1 > 100){
+      window.feederContainer1 = 100;
+    }
+    if(window.feederContainer2 > 100){
+      window.feederContainer2 = 100;
+    }
+    if(window.waterContainer > 100){
+      window.waterContainer = 100;
+    }
+    if(window.wasteContainer > 100){
+      window.wasteContainer = 100;
+    }
+
+    if(window.feederContainer1 < 0){
+      window.feederContainer1 = 0;
+    }
+    if(window.feederContainer2 < 0){
+      window.feederContainer2 = 0;
+    }
+    if(window.waterContainer < 0){
+      window.waterContainer = 0;
+    }
+    if(window.wasteContainer < 0){
+      window.wasteContainer = 0;
+    }
     dashboardUpdates(); // Call the function to update the dashboard with new data
   }else{
     console.log("No data available at this path");
